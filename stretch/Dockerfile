@@ -2,6 +2,7 @@ FROM debian:stretch-slim
 
 # Install exim4
 ENV DEBIAN_FRONTEND noninteractive
+RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list
 RUN set -ex; \
     apt-get update; \
     apt-get install -y exim4-daemon-light; \
