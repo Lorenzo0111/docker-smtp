@@ -10,6 +10,7 @@ RUN set -ex; \
     apt-get install -y exim4-daemon-light; \
     apt-get clean
 
+RUN chmod +x docker-entrypoint.sh
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 EXPOSE 25/tcp
 ENTRYPOINT [ "/usr/local/bin/docker-entrypoint.sh" ]
